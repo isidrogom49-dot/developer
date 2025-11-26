@@ -41,7 +41,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  flex-wrap: nowrap;   /* ← evita que algo se baje */
+  flex-wrap: nowrap;
   min-height: 70px;
   overflow: hidden;
 }
@@ -54,12 +54,12 @@ body {
   font-weight: 700;
   text-decoration: none;
   font-size: 1.2rem;
-  flex-shrink: 1; /* ← permite que el texto se compacte */
+  flex-shrink: 1;
   min-width: 0;
 }
 
 .brand span {
-  white-space: nowrap; /* ← evita que se parta en dos líneas */
+  white-space: nowrap;
 }
 
 .brand .logo {
@@ -73,7 +73,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-shrink: 0; /* ← asegura que no empujen al brand */
+  flex-shrink: 0;
 }
 
 /* NAV */
@@ -197,9 +197,11 @@ body {
 .footer {
   text-align: center;
   padding: 20px;
-  background: #e2e8f0;
+  background: #e2e8f0; /* fondo claro */
+  color: var(--azul-oscuro); /* texto azul oscuro */
   font-size: 0.95rem;
   margin-top: 50px;
+  font-weight: 600;
 }
 
 /* ANIMACIONES */
@@ -221,7 +223,7 @@ body {
     display: block;
   }
 
-  /* nav en menú desplgable */
+  /* nav en menú desplegable */
   .nav {
     display: none;
     flex-direction: column;
