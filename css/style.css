@@ -41,7 +41,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;   /* ← evita que algo se baje */
+  min-height: 70px;
+  overflow: hidden;
 }
 
 .brand {
@@ -52,6 +54,12 @@ body {
   font-weight: 700;
   text-decoration: none;
   font-size: 1.2rem;
+  flex-shrink: 1; /* ← permite que el texto se compacte */
+  min-width: 0;
+}
+
+.brand span {
+  white-space: nowrap; /* ← evita que se parta en dos líneas */
 }
 
 .brand .logo {
@@ -65,6 +73,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-shrink: 0; /* ← asegura que no empujen al brand */
 }
 
 /* NAV */
@@ -206,13 +215,13 @@ body {
   100% {background-position: 0% 50%;}
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
 
-  /* NAV colapsa completo, todos los enlaces visibles al abrir */
+  /* nav en menú desplgable */
   .nav {
     display: none;
     flex-direction: column;
@@ -222,10 +231,45 @@ body {
     border-radius: 8px;
     position: absolute;
     right: 20px;
-    top: 55px;
+    top: 65px;
+    z-index: 999;
   }
 
   .nav.show {
     display: flex;
   }
+
+  /* ICONOS MÁS COMPACTOS */
+  .nav-icons img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* TITULO COMPACTO */
+  .brand span {
+    font-size: 1rem;
+  }
+
+  /* EVITA QUE ALGO BAJE */
+  .menu-social-container {
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .brand {
+    flex-shrink: 1;
+    min-width: 0;
+  }
 }
+
+@media (max-width: 480px) {
+  .brand span {
+    font-size: 0.95rem;
+  }
+
+  .nav-icons img {
+    width: 20px;
+    height: 20px;
+  }
+}
++
