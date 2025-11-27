@@ -7,37 +7,36 @@
   <link rel="stylesheet" href="css/sobre.css" />
 </head>
 <body>
+
   <!-- HEADER -->
   <header class="header">
-    <div class="header-container">
+    <div class="header-container container">
       <a href="index.html" class="brand">
         <img src="img/L.E.jpg" alt="LOGO EMPRESA" class="logo" />
         <span>SYSTEM INNOVATION</span>
       </a>
 
-      <!-- ICONOS A LA DERECHA -->
-      <div class="social-icons">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/7229458731?text=Hola%20quisiera%20contactar%20más%20con%20el%20programador%20ISRAEL%20GTU%20Toluca"
-           target="_blank" title="WhatsApp">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        </a>
+      <div class="menu-social-container">
 
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/share/19WJqsZgtz/"
-           target="_blank" title="Facebook">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        </a>
+        <!-- ICONOS SIEMPRE VISIBLES -->
+        <div class="nav-icons">
+          <a href="https://wa.me/7229458731" target="_blank" title="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="WhatsApp" />
+          </a>
+          <a href="https://www.facebook.com/share/19WJqsZgtz/" target="_blank" title="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook" />
+          </a>
+        </div>
+
+        <!-- MENÚ DE ENLACES -->
+        <nav class="nav" id="navMenu">
+          <a href="index.html">Inicio</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="sobre.html" class="active">Sobre Nosotros</a>
+        </nav>
+
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
       </div>
-      <!-- FIN ICONOS -->
-
-      <div class="menu-toggle" id="menuToggle">&#9776;</div>
-
-      <nav class="nav" id="navMenu">
-        <a href="index.html">Inicio</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="sobre.html" class="active">Sobre Nosotros</a>
-      </nav>
     </div>
   </header>
 
@@ -45,9 +44,9 @@
   <main class="main-content">
     <h1 class="page-title">Conoce a Nuestro Equipo</h1>
     <section class="equipo-container">
-      <!-- Integrantes completos como en tu archivo original -->
+      <!-- Integrantes -->
       <div class="integrante-card">
-        <img src="img/Israel.jpg" alt="Israel" class="integrante-img">
+        <img src="img/isra.jpg" alt="Israel" class="integrante-img">
         <h2>Israel</h2>
         <p>Destaca en programación y desarrollo front-end, con gran creatividad para interfaces interactivas y excelente resolución de problemas.</p>
       </div>
@@ -96,7 +95,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© System Innovation - Proyectos Integradores. </p>
+    <p>© System Innovation - Proyectos Integradores.</p>
   </footer>
 
   <script src="js/sobre.js"></script>

@@ -6,30 +6,29 @@ const proyectos = [
     pdf: "F_PDF/PRIMER.pdf",
     integrantes: "Trabajo grupal de estudiantes.",
     tecnologias: "Arduino, Ultrasonido, Servo",
-    fecha: "15/05/2025"
   },
   {
     titulo: "Código Morse",
     descripcion: "Comunicación mediante pulsos de luz y sonido.",
-    imagenes: ["img/morse.jpg", "img/morse2.jpg", "img/morse3.jpg"],
+    imagenes: ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"],
     pdf: "F_PDF/traductor.pdf",
     integrantes: "Trabajo grupal de estudiantes.",
     tecnologias: "Arduino, LEDs, Buzzer",
-    fecha: "22/06/2025"
   },
   {
     titulo: "Casa inteligente",
     descripcion: "Control de iluminación y seguridad desde el celular.",
-    imagenes: ["img/C.I.jpg", "img/c1.jpg", "img/c2.jpg", "img/c3.jpg"],
+    imagenes: ["img/c1.jpg","img/c2.jpg","img/c3.jpg","img/c4.jpg","img/c5.jpg"],
     pdf: "F_PDF/gestos.pdf",
     integrantes: "Trabajo grupal de estudiantes.",
     tecnologias: "ESP32, Sensores, App móvil",
-    fecha: "10/07/2025"
   }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("proyectos");
+
+  // MODAL PROYECTOS
   const modal = document.getElementById("modal");
   const closeModal = document.getElementById("closeModal");
   const modalTitle = document.getElementById("modal-title");
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalDesc = document.getElementById("modal-desc");
   const modalIntegrantes = document.getElementById("modal-integrantes");
   const modalTecnologias = document.getElementById("modal-tecnologias");
-  const modalFecha = document.getElementById("modal-fecha");
   const modalPdf = document.getElementById("modal-pdf");
   const prevBtn = document.getElementById("prevImg");
   const nextBtn = document.getElementById("nextImg");
@@ -67,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = "perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)";
     });
 
-    // CLICK MODAL
+    // CLICK = abrir modal
     card.addEventListener("click", () => {
       modal.classList.add("show");
       imagenesActuales = proyecto.imagenes;
@@ -77,14 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
       modalDesc.textContent = proyecto.descripcion;
       modalIntegrantes.textContent = proyecto.integrantes;
       modalTecnologias.textContent = proyecto.tecnologias;
-      modalFecha.textContent = proyecto.fecha;
       modalPdf.href = proyecto.pdf;
     });
 
     contenedor.appendChild(card);
   });
 
-  // NAVEGACIÓN MODAL
+  // NAVEGACIÓN IMÁGENES
   prevBtn.addEventListener("click", () => {
     indiceImagen = (indiceImagen - 1 + imagenesActuales.length) % imagenesActuales.length;
     modalImg.src = imagenesActuales[indiceImagen];
@@ -95,16 +92,20 @@ document.addEventListener("DOMContentLoaded", () => {
     modalImg.src = imagenesActuales[indiceImagen];
   });
 
+  // CERRAR MODAL
   closeModal.addEventListener("click", () => modal.classList.remove("show"));
-  window.addEventListener("click", e => { if(e.target === modal) modal.classList.remove("show"); });
+  window.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
 
-  // VIDEO MODAL
+  // =============== VIDEO ===============
   const videoModal = document.getElementById("videoModal");
   const introVideo = document.getElementById("introVideo");
   const closeVideo = document.getElementById("closeVideo");
 
-  videoModal.style.display = "flex";
-  document.body.classList.add("video-active");
+  // MOSTRAR VIDEO AL CARGAR PROYECTOS
+  setTimeout(() => {
+    videoModal.style.display = "flex";
+    document.body.classList.add("video-active");
+  }, 300); // pequeñísimo delay estético
 
   closeVideo.addEventListener("click", () => {
     videoModal.style.display = "none";
@@ -113,14 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   videoModal.addEventListener("click", e => {
-    if(e.target === videoModal){
+    if (e.target === videoModal) {
       videoModal.style.display = "none";
       introVideo.pause();
       document.body.classList.remove("video-active");
     }
   });
 
-  // MENU HAMBURGUESA
+  // HAMBURGUESA
   const hamburger = document.getElementById("menuToggle");
   const navMenu = document.getElementById("navMenu");
 
