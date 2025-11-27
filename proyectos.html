@@ -10,27 +10,35 @@
 
   <!-- HEADER -->
   <header class="header">
-    <div class="header-container">
+    <div class="header-container container">
       <a href="index.html" class="brand">
         <img src="img/L.E.jpg" alt="LOGO EMPRESA" class="logo" />
         <span>SYSTEM INNOVATION</span>
       </a>
 
-      <div class="social-icons">
-        <a href="https://wa.me/7229458731" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="WhatsApp" />
-        </a>
-        <a href="https://www.facebook.com/share/19WJqsZgtz/" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook" />
-        </a>
+      <div class="menu-social-container">
+
+        <!-- ICONOS SIEMPRE VISIBLES -->
+        <div class="nav-icons">
+          <a href="https://wa.me/7229458731" target="_blank" title="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="WhatsApp" />
+          </a>
+          <a href="https://www.facebook.com/share/19WJqsZgtz/" target="_blank" title="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook" />
+          </a>
+        </div>
+
+        <!-- MENÚ DE ENLACES -->
+        <nav class="nav" id="navMenu">
+          <a href="index.html">Inicio</a>
+          <a href="proyectos.html" class="active">Proyectos</a>
+          <a href="sobre.html">Sobre Nosotros</a>
+        </nav>
+
+        <!-- ICONO HAMBURGUESA -->
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
       </div>
     </div>
-
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="sobre.html">Sobre Nosotros</a>
-      <a href="proyectos.html" class="active">Proyectos</a>
-    </nav>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
