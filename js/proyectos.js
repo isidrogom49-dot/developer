@@ -2,7 +2,7 @@ const proyectos = [
   {
     titulo: "Puerta automática",
     descripcion: "Sistema de acceso automatizado con sensores y servomotores.",
-    imagenes: ["img/APERTURA.jpg", "img/puerta2.jpg", "img/puerta3.jpg"],
+    imagenes: ["img/APERTURA.jpg","img/uno.jpg","img/dos.jpg","img/tres.jpg"],
     pdf: "F_PDF/PRIMER.pdf",
     integrantes: "Trabajo grupal de estudiantes.",
     tecnologias: "Arduino, Ultrasonido, Servo",
@@ -12,7 +12,7 @@ const proyectos = [
     titulo: "Código Morse",
     descripcion: "Comunicación mediante pulsos de luz y sonido.",
     imagenes: ["img/morse.jpg", "img/morse2.jpg", "img/morse3.jpg"],
-    pdf: "gestos.pdf",
+    pdf: "F_PDF/traductor.pdf",
     integrantes: "Trabajo grupal de estudiantes.",
     tecnologias: "Arduino, LEDs, Buzzer",
     fecha: "22/06/2025"
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let indiceImagen = 0;
   let imagenesActuales = [];
 
+  // GENERAR TARJETAS
   proyectos.forEach(proyecto => {
     const card = document.createElement("div");
     card.classList.add("proyecto-card");
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = "perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)";
     });
 
+    // CLICK MODAL
     card.addEventListener("click", () => {
       modal.classList.add("show");
       imagenesActuales = proyecto.imagenes;
@@ -82,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     contenedor.appendChild(card);
   });
 
+  // NAVEGACIÓN MODAL
   prevBtn.addEventListener("click", () => {
     indiceImagen = (indiceImagen - 1 + imagenesActuales.length) % imagenesActuales.length;
     modalImg.src = imagenesActuales[indiceImagen];
@@ -115,5 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
       introVideo.pause();
       document.body.classList.remove("video-active");
     }
+  });
+
+  // MENU HAMBURGUESA
+  const hamburger = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
   });
 });
